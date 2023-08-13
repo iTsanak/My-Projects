@@ -1,0 +1,620 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Oswald:wght@200;400&family=Playfair+Display+SC&display=swap');
+
+/*-----------------GENERAL CSS-----------------*/
+/* Reset some default browser styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Playfair Display SC', serif;
+    
+}
+
+/*---------------Background video--------------------*/
+
+/* Canvas for rain effect */
+#RainEffectBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+
+
+/*------------------Preload Message------------------*/
+/* Pre-loading message styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; 
+    opacity: 1;
+    transition: opacity 1s ease, transform 1s ease; 
+}
+
+#preloader.hidden {
+    opacity: 0;
+    transform: scale(20); /* Zoom in as it fades out */
+    transition: opacity 1s ease, transform 1s ease; 
+    pointer-events: none; 
+}
+
+#preloader p {
+    color: white; 
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/*--------------------BODY---------------------*/
+/* Center the content vertically and horizontally */
+body {
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    background-color: #f0f0f0; 
+}
+    #overlay-text {
+        font-size: 32px;
+    }
+
+    /* Styles for screens 400px or less (mobile) */
+    @media screen and (max-width: 400px) {
+        body {
+            font-size: 14px;
+        }
+
+        #overlay-text {
+            font-size: 24px;
+        }
+
+       
+
+       
+    }
+
+    /* Additional responsive styles for adjusting layout, margins, etc. */
+    @media screen and (max-width: 768px) {
+       
+        .section {
+            margin: 10px;
+        }
+    }
+
+/*-------------------------SECTIONS-------------------------*/
+/* Set the section background to a transparent background */
+.section {
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent background color */
+    padding-bottom: 100px;
+    padding-top: 100px;
+    padding-left: 450px;
+    padding-right: 450px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; 
+    z-index: 1; 
+}
+
+
+
+
+
+
+/* ------------------------HOME SECTION----------------------- */
+/* CSS to target the specific image in the "Home" section */
+#profile-image {
+    display: block; 
+    max-width: 500px;
+    height: auto; 
+    margin: auto ; 
+}
+
+/* Add styles for the CV download button */
+.cv-button {
+    display: inline-block;
+    padding: 0px 20px;
+    background-color: green; 
+    color: white;
+    border: none;
+    border-radius: 50px; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+   margin-left: auto;
+}
+
+
+
+.cv-button:hover {
+    background-color: black; 
+    cursor: pointer;
+    transform: scale(1.05); 
+}
+
+/* Add styles for the buttons container */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+}
+
+/* Styles for the contact link */
+.contact-me {
+    margin-left: 90px; 
+    margin-top:   20px;
+    display: inline-block;
+    padding: 20px 48px;
+    background-color: green; 
+    color: white;
+    border: none;
+    border-radius: 50px; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+/* Hover over effect */
+.contact-me:hover {
+    background-color: black; 
+    cursor: pointer;
+    transform: scale(1.05); 
+}
+
+/* CSS */
+#home {
+    position: relative; 
+   
+}
+    /* CSS for the hover effect on the h1 element */
+    #overlay-text {
+        position: absolute;
+        top: 0;
+        left: 42%;
+        transform: translateX(-35%);
+        font-size: 37px;
+        transition: transform 0.2s;
+        color:green;
+    }
+
+    
+    #overlay-text:hover span {
+        display: inline-block;
+        transform: translateY(0px);
+        transition: transform 0.3s;
+    }
+
+    #overlay-text span:hover {
+        transform: translateY(-15px);
+    }
+
+
+
+
+
+
+/* ------------------------ABOUT ME SECTION----------------------------- */
+/* Styles for the text and image in the About Me Section  */
+.about-content {
+    display:block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.text-content {
+    flex: 1; 
+    padding-left: 20px; 
+}
+
+#about h2,
+#about p {
+    text-align: left; 
+    
+}
+
+#Second-image {
+    display: block;
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(16px 16px 20px green);
+    border-radius: 50%;
+    margin: 0 auto; 
+}
+
+
+.info-box {
+    background-color: green; 
+    color: #ffffff; 
+    padding: 20px;
+    margin-top: 20px;
+   
+    border-radius: 50px;
+    
+}
+
+
+.info-box h3{
+color: black;
+
+}
+
+
+.label {
+    display: inline-block;
+    width: 96px; 
+    text-align: left;
+    margin-right: 100px; 
+    font-weight: bold;
+    
+}
+
+
+/*------------------------SKILLS SECTION------------------------*/
+
+.skills-content h2{
+    text-align: center;
+}
+
+
+ /* Styles for the skills section */
+ .skills-content {
+    
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Styles for skills logos */
+.skills-logo {
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+/* Hover effect on skills logos */
+.skills-logo:hover {
+    transform: scale(1.1);
+}
+/*-------------------------EDUCATION SECTION---------------------------*/
+
+/* Education Section Styles */
+#education {
+    background-color: rgba(255, 255, 255, 0.7);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  
+    
+}
+
+#education:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    
+}
+
+.education-content {
+    display: flex;
+    width: 100%;
+    padding-right:110px;
+}
+
+.school-details {
+    flex: 1; 
+    background-color: green;
+    padding: 20px;
+    color: white;
+    border-radius: 20px 0 0 200px;
+    margin-right: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.school-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 2);
+}
+
+.school-details h2 {
+    margin: 0;
+    text-align: left;
+    font-size: 50px;
+}
+
+.study-details {
+    padding: 60px;
+    border-radius: 0 20px 20px 0;
+    background-color: #f0f0f0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.study-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 2);
+}
+
+.study-details h3 {
+    margin-top: 0;
+    font-size: 40px;
+   
+}
+.study-details h4 {
+    color: green;
+}
+
+
+.study-details ul {
+    list-style-type: disc;
+    margin-left: 00px;
+    font-size: 20px;
+    color: green;
+}
+
+/*----------------------PROJECTS SECTION------------------------------*/
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+  
+}
+
+.carousel {
+    display: flex;
+}
+
+.project {
+    
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 2);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+/*------------------------CONTACT SECTION----------------------*/
+/* CSS for the clicked input field */
+.input_field_clicked {
+    border: 2px solid green;
+}
+
+
+/* Adjust the form layout */
+#contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Align the radio buttons with the labels */
+#contact-form div label {
+    display:contents;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#contact-form div label input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Adjust the position of the hourly rate box */
+#hourly-rate-box {
+    grid-column: span 2;
+    margin-top: 20px;
+}
+
+
+/* ------------------------Header----------------------------- */
+/* Header styles */
+header {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 0 0 8px 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    position: relative; 
+    z-index: 1; 
+}
+
+/* Add a dynamic underline effect for links */
+header a {
+    text-decoration: none;
+    color: #333; 
+    position: relative;
+    transition: color 0.s;
+}
+
+header a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #333; 
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+
+header a:hover {
+    color: green; 
+}
+
+header a:hover::after {
+    width: 100%; 
+}
+
+
+
+/*------------------Nav Header Styles--------------*/
+/* Header navigation styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Add pop-out effect on hover */
+nav li:hover {
+    transform: translateY(-5px); 
+}
+
+
+/*-----------------CONTACT FORM-----------------*/
+/* Styles for the Contact Section */
+#contact {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+}
+
+/* Styles for the Contact Form */
+#contact-form {
+    display: inline-block;
+    text-align: left;
+    max-width: 400px; 
+    width: 100%;
+}
+
+/* Styles for form labels and input elements */
+#contact-form label {
+    display: block; 
+    margin-top: 10px; 
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-top: 5px; 
+}
+
+#contact-form textarea {
+    resize: vertical; 
+}
+
+#contact-form input[type="submit"] {
+    display: block; 
+    margin-top: 15px; 
+    padding: 10px; 
+    background-color: green; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: black; 
+}
+
+
+
+/* Add the .sticky class to make the header sticky on scroll */
+.header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+   height: 40px;
+    z-index: 100; 
+    background-color: green(174, 26, 26, 0.8); 
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+/*------------------------FOOTER-----------------------------*/
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+/* LinkedIn link styles */
+.linkedin-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0077b5;
+    font-weight: bold;
+}
+
+.linkedin-link img {
+    vertical-align: middle;
+    margin-left: 5px;
+}
